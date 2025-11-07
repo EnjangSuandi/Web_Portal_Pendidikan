@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #111;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+ul { list-style: none; }
+h1, h2, h3 { font-weight: 700; }
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+.logo-misi {
+    font-style: italic;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* Navigasi Bar */
+#navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    z-index: 1000;
+    background-color: transparent;
+    color: white; 
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#navbar a { color: inherit; text-decoration: none; margin-left: 20px; transition: opacity 0.1s ease; }
+a:hover { opacity: 0.7; }
+.nav-links { list-style: none; display: flex; }
+.scrolled {
+    background-color: white !important; 
+    color: black !important; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Video */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.video-container { 
+    position: absolute; 
+    top: -5%; 
+    left: -5%; 
+    width: 110%; 
+    height: 110%; 
+    overflow: hidden; 
+    z-index: -1; 
+    transition: transform 0.2s ease-out;
+}
+#bg-video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+.hero-content { z-index: 1; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+.hero-content h1 { font-size: 3.5em; margin-bottom: 10px; }
+.hero-content p { font-size: 2em; }
+
+.content-section {
+    padding: 0; 
+    background-color: #f4f4f4;
+}
+
+.universitas-section,
+.program-studi,
+.agenda {
+    padding: 80px 0;
+}
+
+.universitas-section {
+    background-color: #000;
+    color: #fff; 
+}
+.universitas-section .section-header p,
+.universitas-section .section-header .btn {
+    color: #fff;
+    border-color: #555;
+}
+.universitas-section .section-header .btn svg path {
+    stroke: #fff;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.universitas-section .section-header .title-group,
+.program-studi .section-header .title-group,
+.agenda .section-header .title-group { max-width: 50%; }
+
+.section-header h2 { font-size: 2.25rem; margin-bottom: 10px; }
+.section-header p { color: #555; font-size: 1rem; }
+.universitas-section .sub-heading,
+.agenda .sub-heading { color: #555; font-size: 0.9rem; margin-bottom: 5px; }
+
+/* Tombol */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.card-row { display: grid; gap: 20px; }
+.card-row-4 { grid-template-columns: repeat(4, 1fr); }
+
+
+/* gaya geser */
+.carousel-wrapper { flex-grow: 1; overflow: hidden; }
+.program-studi .carousel-wrapper,
+.agenda .carousel-wrapper {
+    padding: 0 20px; 
+}
+.card-row-scroll { 
+    display: flex; 
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.card-row-scroll::-webkit-scrollbar { display: none; }
+
+.card {
+    background-color: #e9e9e9;
+    border-radius: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-out; 
+    position: relative;
+    display: block; 
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    opacity: 0; 
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    backdrop-filter: blur(0px); 
+}
+
+.card-overlay p {
+    transform: translateY(20px); 
+    transition: transform 0.3s ease;
+    color: white; 
+}
+
+/* Animasi muncul saat kursor mendekat */
+.card:hover .card-overlay {
+    opacity: 1; 
+    backdrop-filter: blur(3px); 
+}
+
+.card:hover .card-overlay p {
+    transform: translateY(0); 
+}
+
+
+/* universitas */
+.universitas-section .card {
+    height: 250px;
+    background-color: #333; 
+}
+
+.universitas-section .card:hover img {
+    transform: scale(1.05);
+}
+
+.program-studi .card.card-large {
+    height: 350px;
+    width: calc(33.333% - 13.333px);
+    transform: none; 
+}
+
+
+/* beasiswa */
+.beasiswa {
+    background-color: #000000;
+    color: #fff;
+    padding: 80px 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden; 
+}
+.beasiswa .container { 
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+    padding: 0; 
+}
+.beasiswa .content-wrapper { 
+    max-width: 30%; 
+    flex-shrink: 0; 
+    padding: 0 20px; 
+}
+
+.beasiswa .content-wrapper .description-text {
+    color: #aaa;
+    margin-bottom: 30px; 
+}
+
+.beasiswa h2 { 
+    font-size: 2.25rem; 
+    margin-bottom: 10px; 
+}
+
+.beasiswa .carousel-wrapper {
+    flex: 1; 
+    position: relative; 
+    margin: 0; 
+    padding: 0 50px; 
+}
+
+.beasiswa .card-row-scroll {
+    padding: 0; 
+    margin-left: 0;
+    margin-right: 0;
+    flex-grow: 1; 
+    width: 100%; 
+}
+
+.carousel-nav-beasiswa {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+.carousel-nav-beasiswa.nav-left {
+    left: 0; 
+}
+.carousel-nav-beasiswa.nav-right {
+    right: 0; 
+}
+
+.nav-arrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #111; 
+    background-color: #fff;
+    position: relative;
+    top: auto; 
+    transform: none;
+}
+.beasiswa .nav-arrow {
+    color: #fff;
+    border-color: #555;
+    background-color: #000;
+}
+.beasiswa .nav-arrow:hover { background-color: #333; }
+
+.beasiswa .card.card-large {
+    height: 350px;
+    background-color: #222;
+    width: calc(66.666% - 6.666px); 
+}
+#beasiswa-card-row .card:first-child,
+#beasiswa-card-row .card:last-child {
+    margin: 0; 
+}
+
+.agenda .card.card-small {
+    height: 200px; 
+    width: calc(20% - 16px);
+}
+
+
+/* footer */
+.main-footer {
+    background-color: #111;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.main-footer .container { padding: 0 20px; }
+
+.social-links {
+    margin-bottom: 15px;
+}
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    opacity: 0.8;
+}
+.social-links a:hover {
+    opacity: 1;
+}
+
+/* animasi scroll */
+.hidden {
+    opacity: 0;
+    filter: none; 
+    transform: translateY(20px);
+    transition: all 0.7s cubic-bezier(0.17, 0.84, 0.44, 1) 0.1s;
+}
+
+.show {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0); 
+}
+
+.hero-content h1.hidden, 
+.hero-content h1.show,
+.hero-content p.hidden, 
+.hero-content p.show {
+    transform: translateY(20px);
+}
+.hero-content h1.show, 
+.hero-content p.show {
+    transform: translateY(0);
+}
+.hero-content p.hidden {
+    transition-delay: 0.3s;
+}
+
+/* Media di Tablet & Mobile*/
+@media (max-width: 992px) {
+    .card-row { gap: 15px; }
+    .card-row-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .universitas-section .card {
+        width: 100%;
+    }
+    .program-studi .card.card-large {
+        width: calc(50% - 7.5px); 
+    }
+    
+    .beasiswa .container { flex-direction: column; align-items: flex-start; padding: 0 20px; }
+    .beasiswa .content-wrapper { max-width: 100%; padding: 0; }
+    .beasiswa .carousel-wrapper { width: 100%; margin: 0; padding: 0; } /* Padding 0 di mobile */
+    .beasiswa .card-row-scroll { padding: 0; margin: 0; }
+    .beasiswa .card.card-large { width: calc(100% - 20px); margin: 0 10px; }
+    .carousel-nav-beasiswa { display: none; }
+    .agenda .card.card-small {
+        height: 200px; 
+        width: calc(50% - 10px);
+    }
+}

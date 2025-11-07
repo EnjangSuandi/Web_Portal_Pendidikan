@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademisi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Aka<span class="logo-misi">Themisi</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Jelajahi Universitas</a></li>
+            <li><a href="#">Kalender Pendidikan</a></li>
+            <li><a href="#">Program Studi</a></li>
+            <li><a href="#">Info Beasiswa</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section">
+        <div class="video-container">
+            <video autoplay muted loop id="bg-video">
+                <source src="aset/bg.mp4" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1 class="hidden">Pusat Informasi Akademik Indonesia</h1>
+            <p class="hidden">Wujudkan mimpi bersama kami</p>
+        </div>
+    </header>
+
+    <main class="content-section">
+        
+        <section class="universitas-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="title-group">
+                        <p class="sub-heading hidden">Jelajahi</p>
+                        <h2 class="hidden">Universitas di Indonesia</h2>
+                    </div>
+                    <a href="#" class="btn hidden">
+                        Lihat Semua Universitas
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="#111" stroke-width="2" stroke-linecap="round"/><path d="M13 6L19 12L13 18" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
+                <div class="card-row card-row-4">
+                    <a href="#" class="card card-img-hover">
+                        <img src="aset/ipb.jpeg" alt="IPB">
+                        <div class="card-overlay"><p>IPB University</p></div>
+                    </a>
+                    <a href="#" class="card card-img-hover">
+                        <img src="aset/upi.jpeg" alt="UPI">
+                        <div class="card-overlay"><p>UPI</p></div>
+                    </a>
+                    <a href="#" class="card card-img-hover">
+                        <img src="aset/telkom.jpeg" alt="Telkom">
+                        <div class="card-overlay"><p>Telkom University</p></div>
+                    </a>
+                    <a href="#" class="card card-img-hover">
+                        <img src="aset/ui.jpeg" alt="Universitas Indonesia">
+                        <div class="card-overlay"><p>Universitas Indonesia</p></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="program-studi">
+            <div class="container">
+                <div class="section-header">
+                    <div class="title-group">
+                        <h2 class="hidden">Program Studi</h2>
+                        <p class="hidden">Jelajahi berbagai jenis Program Studi yang ada di seluruh Indonesia.</p>
+                    </div>
+                    <a href="#" class="btn hidden">
+                        Pelajari Selengkapnya
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="#111" stroke-width="2" stroke-linecap="round"/><path d="M13 6L19 12L13 18" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
+
+                <div class="carousel-wrapper" id="ps-carousel-wrapper">
+                    <div class="card-row card-row-scroll" id="program-studi-card-row">
+                        <a href="#" class="card card-large">
+                            <img src="aset/informatika.png" alt="Program Studi Informatika">
+                            <div class="card-overlay"><p>Informatika</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/manajement.png" alt="Program Studi Manajement">
+                            <div class="card-overlay"><p>Manajemen</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/peternakan.png" alt="Program Studi Peternakan">
+                            <div class="card-overlay"><p>Peternakan</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/psikolog.png" alt="Program Studi Psikolog">
+                            <div class="card-overlay"><p>Psikologi</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/teknik_mesin.png" alt="Program Studi Teknik Mesin">
+                            <div class="card-overlay"><p>Teknik Mesin</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/bahasa.png" alt="Program Studi Bahasa">
+                            <div class="card-overlay"><p>Ilmu Bahasa</p></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="beasiswa">
+            <div class="container">
+                <div class="content-wrapper">
+                    <h2 class="hidden">Beasiswa Pendidikan</h2>
+                    <p class="hidden description-text">Temukan berbagai jenis beasiswa pendidikan di seluruh Indonesia.</p>
+                    <a href="#" class="btn btn-dark hidden">
+                        Pelajari Selengkapnya
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M13 6L19 12L13 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
+                
+                <div class="carousel-wrapper" id="beasiswa-carousel-wrapper">
+                    
+                    <div class="carousel-nav-beasiswa nav-left">
+                        <span class="nav-arrow" id="prev-btn">&lt;</span>
+                    </div>
+                    
+                    <div class="card-row card-row-scroll" id="beasiswa-card-row">
+                        <a href="#" class="card card-large">
+                            <img src="aset/upibea.png" alt="Beasiswa UPI">
+                            <div class="card-overlay"><p>Beasiswa UPI</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/telkombea.png" alt="Beasiswa Telkom">
+                            <div class="card-overlay"><p>Beasiswa Telkom</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/kip.png" alt="Beasiswa KIP Kuliah">
+                            <div class="card-overlay"><p>KIP Kuliah</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/lpdp.png" alt="Beasiswa LPDP">
+                            <div class="card-overlay"><p>LPDP</p></div>
+                        </a>
+                        <a href="#" class="card card-large">
+                            <img src="aset/erasmus.png" alt="Beasiswa Erasmus">
+                            <div class="card-overlay"><p>Erasmus+</p></div>
+                        </a>
+                    </div>
+
+                    <div class="carousel-nav-beasiswa nav-right">
+                        <span class="nav-arrow" id="next-btn">&gt;</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="agenda">
+            <div class="container">
+                <div class="section-header">
+                    <div class="title-group">
+                        <p class="sub-heading hidden">Upcoming Agenda</p>
+                        <h2 class="hidden">Agenda Pendaftaran Universitas</h2>
+                    </div>
+                    <a href="#" class="btn hidden">
+                        Jelajahi Agenda
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19" stroke="#111" stroke-width="2" stroke-linecap="round"/><path d="M13 6L19 12L13 18" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
+                <div class="carousel-wrapper" id="agenda-carousel-wrapper">
+                    <div class="card-row card-row-scroll" id="agenda-card-row">
+                        <a href="#" class="card card-small">
+                            <img src="aset/festival.png" alt="Festival">
+                            <div class="card-overlay"><p>Festival Kampus</p></div>
+                        </a>
+                        <a href="#" class="card card-small">
+                            <img src="aset/kuliah_umum.png" alt="Kuliah Umum">
+                            <div class="card-overlay"><p>Kuliah Umum</p></div>
+                        </a>
+                        <a href="#" class="card card-small">
+                            <img src="aset/magang.png" alt="Magang">
+                            <div class="card-overlay"><p>Program Magang</p></div>
+                        </a>
+                        <a href="#" class="card card-small">
+                            <img src="aset/pendaftaran.png" alt="Pendaftaran">
+                            <div class="card-overlay"><p>Jalur Pendaftaran</p></div>
+                        </a>
+                        <a href="#" class="card card-small">
+                            <img src="aset/pertukaran.png" alt="pertukaran">
+                            <div class="card-overlay"><p>Pertukaran Pelajar</p></div>
+                        </a>
+                        <a href="#" class="card card-small">
+                            <img src="aset/webinar.png" alt="webinar">
+                            <div class="card-overlay"><p>Webinar Karir</p></div>
+                        </a>
+                        <a href="#" class="card card-small">
+                            <img src="aset/volunteer.png" alt="volunteer">
+                            <div class="card-overlay"><p>Peluang Volunteer</p></div>
+                        </a>
+                        <a href="#" class="card card-small">
+                            <img src="aset/lomba.jpg" alt="volunteer">
+                            <div class="card-overlay"><p>Info Lomba</p></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2025 AkaThemisi. All rights reserved. | Pusat Informasi Akademik Indonesia</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
