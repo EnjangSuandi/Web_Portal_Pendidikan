@@ -1,4 +1,6 @@
 const navbar = document.getElementById('navbar');
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
@@ -7,6 +9,27 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 });
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        
+        if (navLinks.classList.contains('active')) {
+            this.innerHTML = '&times;'; 
+        } else {
+            this.innerHTML = '&#9776;';
+        }
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '&#9776;';
+            }
+        });
+    });
+}
 
 function setupCarousel(prevBtnId, nextBtnId, cardRowId) {
     const prevBtn = document.getElementById(prevBtnId);
@@ -32,7 +55,6 @@ function setupCarousel(prevBtnId, nextBtnId, cardRowId) {
 
 setupCarousel('prev-btn', 'next-btn', 'beasiswa-card-row');
 
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -52,13 +74,17 @@ const heroSection = document.querySelector('.hero-section');
 
 if (videoContainer) {
     heroSection.addEventListener('mousemove', (e) => {
-        const speed = 0.1; 
-        const x = (window.innerWidth / 2 - e.clientX) * speed;
-        const y = (window.innerHeight / 2 - e.clientY) * speed;
-        videoContainer.style.transform = `translate(${x}px, ${y}px)`;
+        if (window.innerWidth > 992) {
+            const speed = 0.1; 
+            const x = (window.innerWidth / 2 - e.clientX) * speed;
+            const y = (window.innerHeight / 2 - e.clientY) * speed;
+            videoContainer.style.transform = `translate(${x}px, ${y}px)`;
+        }
     });
 
     heroSection.addEventListener('mouseleave', () => {
-        videoContainer.style.transform = 'translate(0, 0)';
+        if (window.innerWidth > 992) {
+            videoContainer.style.transform = 'translate(0, 0)';
+        }
     });
 }
